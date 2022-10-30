@@ -25,6 +25,7 @@ type Request struct {
 	Logger                   log.Logger
 	PanicHandler             errors.PanicHandler
 	SubscribeResolverTimeout time.Duration
+	ErrorExtensioner         func(error) map[string]interface{}
 }
 
 func (r *Request) handlePanic(ctx context.Context) {
@@ -217,6 +218,18 @@ func execFieldSelection(ctx context.Context, r *Request, s *resolvable.Schema, f
 				err.ResolverError = resolverErr
 				if ex, ok := callOut[1].Interface().(extensionser); ok {
 					err.Extensions = ex.Extensions()
+				}
+				if r.ErrorExtensioner != nil {
+					if cerr, ok := callOut[1].Interface().(error); ok {
+						if exts := r.ErrorExtensioner(cerr); exts != nil {
+							if err.Extensions == nil {
+								err.Extensions = make(map[string]interface{})
+							}
+							for k, v := range exts {
+								err.Extensions[k] = v
+							}
+						}
+					}
 				}
 				return err
 			}
