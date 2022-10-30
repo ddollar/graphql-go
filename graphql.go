@@ -83,6 +83,7 @@ type Schema struct {
 	useStringDescriptions    bool
 	disableIntrospection     bool
 	subscribeResolverTimeout time.Duration
+	errorExtensioner         func(error) map[string]interface{}
 }
 
 func (s *Schema) ASTSchema() *types.Schema {
@@ -166,6 +167,14 @@ func DisableIntrospection() SchemaOpt {
 func SubscribeResolverTimeout(timeout time.Duration) SchemaOpt {
 	return func(s *Schema) {
 		s.subscribeResolverTimeout = timeout
+	}
+}
+
+// ErrorExtensioner is used to extract extensions (such as strack traces) from
+// resolver errors.
+func ErrorExtensioner(extensioner func(error) map[string]interface{}) SchemaOpt {
+	return func(s *Schema) {
+		s.errorExtensioner = extensioner
 	}
 }
 
@@ -254,10 +263,11 @@ func (s *Schema) exec(ctx context.Context, queryString string, operationName str
 			Schema:               s.schema,
 			DisableIntrospection: s.disableIntrospection,
 		},
-		Limiter:      make(chan struct{}, s.maxParallelism),
-		Tracer:       s.tracer,
-		Logger:       s.logger,
-		PanicHandler: s.panicHandler,
+		Limiter:          make(chan struct{}, s.maxParallelism),
+		Tracer:           s.tracer,
+		Logger:           s.logger,
+		PanicHandler:     s.panicHandler,
+		ErrorExtensioner: s.errorExtensioner,
 	}
 	varTypes := make(map[string]*introspection.Type)
 	for _, v := range op.Vars {
