@@ -8,11 +8,11 @@ import (
 
 	"encoding/json"
 
-	"github.com/graph-gophers/graphql-go/errors"
-	"github.com/graph-gophers/graphql-go/internal/query"
-	"github.com/graph-gophers/graphql-go/internal/schema"
-	"github.com/graph-gophers/graphql-go/internal/validation"
-	"github.com/graph-gophers/graphql-go/types"
+	"github.com/ddollar/graphql-go/errors"
+	"github.com/ddollar/graphql-go/internal/query"
+	"github.com/ddollar/graphql-go/internal/schema"
+	"github.com/ddollar/graphql-go/internal/validation"
+	"github.com/ddollar/graphql-go/types"
 )
 
 type Test struct {

@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	graphql "github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/relay"
+	graphql "github.com/ddollar/graphql-go"
+	"github.com/ddollar/graphql-go/relay"
 )
 
 type query struct{}

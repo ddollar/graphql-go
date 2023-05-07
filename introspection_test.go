@@ -6,9 +6,9 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/social"
-	"github.com/graph-gophers/graphql-go/example/starwars"
+	"github.com/ddollar/graphql-go"
+	"github.com/ddollar/graphql-go/example/social"
+	"github.com/ddollar/graphql-go/example/starwars"
 )
 
 var socialSchema = graphql.MustParseSchema(social.Schema, &social.Resolver{}, graphql.UseFieldResolvers())

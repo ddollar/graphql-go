@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"text/scanner"
 
-	"github.com/graph-gophers/graphql-go/errors"
-	"github.com/graph-gophers/graphql-go/internal/common"
-	"github.com/graph-gophers/graphql-go/types"
+	"github.com/ddollar/graphql-go/errors"
+	"github.com/ddollar/graphql-go/internal/common"
+	"github.com/ddollar/graphql-go/types"
 )
 
 // New initializes an instance of Schema.

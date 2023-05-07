@@ -3,10 +3,10 @@ package opentracing_test
 import (
 	"testing"
 
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/starwars"
-	"github.com/graph-gophers/graphql-go/trace/opentracing"
-	"github.com/graph-gophers/graphql-go/trace/tracer"
+	"github.com/ddollar/graphql-go"
+	"github.com/ddollar/graphql-go/example/starwars"
+	"github.com/ddollar/graphql-go/trace/opentracing"
+	"github.com/ddollar/graphql-go/trace/tracer"
 )
 
 func TestInterfaceImplementation(t *testing.T) {

@@ -1,4 +1,4 @@
-# graphql-go [![Sourcegraph](https://sourcegraph.com/github.com/graph-gophers/graphql-go/-/badge.svg)](https://sourcegraph.com/github.com/graph-gophers/graphql-go?badge) [![Build Status](https://graph-gophers.semaphoreci.com/badges/graphql-go/branches/master.svg?style=shields)](https://graph-gophers.semaphoreci.com/projects/graphql-go) [![GoDoc](https://godoc.org/github.com/graph-gophers/graphql-go?status.svg)](https://godoc.org/github.com/graph-gophers/graphql-go)
+# graphql-go [![Sourcegraph](https://sourcegraph.com/github.com/ddollar/graphql-go/-/badge.svg)](https://sourcegraph.com/github.com/ddollar/graphql-go?badge) [![Build Status](https://ddollar.semaphoreci.com/badges/graphql-go/branches/master.svg?style=shields)](https://ddollar.semaphoreci.com/projects/graphql-go) [![GoDoc](https://godoc.org/github.com/ddollar/graphql-go?status.svg)](https://godoc.org/github.com/ddollar/graphql-go)
 
 <p align="center"><img src="docs/img/logo.png" width="300"></p>
 
@@ -17,11 +17,11 @@ safe for production use.
 - handles panics in resolvers
 - parallel execution of resolvers
 - subscriptions
-   - [sample WS transport](https://github.com/graph-gophers/graphql-transport-ws)
+  - [sample WS transport](https://github.com/ddollar/graphql-transport-ws)
 
 ## Roadmap
 
-We're trying out the GitHub Project feature to manage `graphql-go`'s [development roadmap](https://github.com/graph-gophers/graphql-go/projects/1).
+We're trying out the GitHub Project feature to manage `graphql-go`'s [development roadmap](https://github.com/ddollar/graphql-go/projects/1).
 Feedback is welcome and appreciated.
 
 ## (Some) Documentation
@@ -29,6 +29,7 @@ Feedback is welcome and appreciated.
 ### Getting started
 
 In order to run a simple GraphQL server locally create a `main.go` file with the following content:
+
 ```go
 package main
 
@@ -36,8 +37,8 @@ import (
         "log"
         "net/http"
 
-        graphql "github.com/graph-gophers/graphql-go"
-        "github.com/graph-gophers/graphql-go/relay"
+        graphql "github.com/ddollar/graphql-go"
+        "github.com/ddollar/graphql-go/relay"
 )
 
 type query struct{}
@@ -55,23 +56,27 @@ func main() {
         log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
+
 Then run the file with `go run main.go`. To test:
-	    
+
 ```sh
 curl -XPOST -d '{"query": "{ hello }"}' localhost:8080/query
 ```
-For more realistic usecases check our [examples section](https://github.com/graph-gophers/graphql-go/wiki/Examples).
+
+For more realistic usecases check our [examples section](https://github.com/ddollar/graphql-go/wiki/Examples).
 
 ### Resolvers
 
 A resolver must have one method or field for each field of the GraphQL type it resolves. The method or field name has to be [exported](https://golang.org/ref/spec#Exported_identifiers) and match the schema's field's name in a non-case-sensitive way.
 You can use struct fields as resolvers by using `SchemaOpt: UseFieldResolvers()`. For example,
+
 ```
 opts := []graphql.SchemaOpt{graphql.UseFieldResolvers()}
 schema := graphql.MustParseSchema(s, &query{}, opts...)
-```   
+```
 
-When using `UseFieldResolvers` schema option, a struct field will be used *only* when:
+When using `UseFieldResolvers` schema option, a struct field will be used _only_ when:
+
 - there is no method for a struct field
 - a struct field does not implement an interface method
 - a struct field does not have arguments
@@ -173,31 +178,32 @@ By default the library uses `noop.Tracer`. If you want to change that you can us
 package main
 
 import (
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/starwars"
-	otelgraphql "github.com/graph-gophers/graphql-go/trace/otel"
-	"github.com/graph-gophers/graphql-go/trace/tracer"
+	"github.com/ddollar/graphql-go"
+	"github.com/ddollar/graphql-go/example/starwars"
+	otelgraphql "github.com/ddollar/graphql-go/trace/otel"
+	"github.com/ddollar/graphql-go/trace/tracer"
 )
 // ...
 _, err := graphql.ParseSchema(starwars.Schema, nil, graphql.Tracer(otelgraphql.DefaultTracer()))
 // ...
 ```
+
 Alternatively you can pass an existing trace.Tracer instance:
+
 ```go
 tr := otel.Tracer("example")
 _, err = graphql.ParseSchema(starwars.Schema, nil, graphql.Tracer(&otelgraphql.Tracer{Tracer: tr}))
 ```
-
 
 ```go
 // OpenTracing tracer
 package main
 
 import (
-	"github.com/graph-gophers/graphql-go"
-	"github.com/graph-gophers/graphql-go/example/starwars"
-	"github.com/graph-gophers/graphql-go/trace/opentracing"
-	"github.com/graph-gophers/graphql-go/trace/tracer"
+	"github.com/ddollar/graphql-go"
+	"github.com/ddollar/graphql-go/example/starwars"
+	"github.com/ddollar/graphql-go/trace/opentracing"
+	"github.com/ddollar/graphql-go/trace/tracer"
 )
 // ...
 _, err := graphql.ParseSchema(starwars.Schema, nil, graphql.Tracer(opentracing.Tracer{}))
@@ -206,6 +212,7 @@ _, err := graphql.ParseSchema(starwars.Schema, nil, graphql.Tracer(opentracing.T
 ```
 
 If you need to implement a custom tracer the library would accept any tracer which implements the interface below:
+
 ```go
 type Tracer interface {
     TraceQuery(ctx context.Context, queryString string, operationName string, variables map[string]interface{}, varTypes map[string]*introspection.Type) (context.Context, func([]*errors.QueryError))
@@ -214,6 +221,4 @@ type Tracer interface {
 }
 ```
 
-
-### [Examples](https://github.com/graph-gophers/graphql-go/wiki/Examples)
-
+### [Examples](https://github.com/ddollar/graphql-go/wiki/Examples)
