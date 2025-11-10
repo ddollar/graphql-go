@@ -1,6 +1,6 @@
 package types
 
-import "github.com/ddollar/graphql-go/errors"
+import "go.ddollar.dev/graphql-go/errors"
 
 // Extension type defines a GraphQL type extension.
 // Schemas, Objects, Inputs and Scalars can be extended.

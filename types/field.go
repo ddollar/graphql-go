@@ -1,6 +1,6 @@
 package types
 
-import "github.com/ddollar/graphql-go/errors"
+import "go.ddollar.dev/graphql-go/errors"
 
 // FieldDefinition is a representation of a GraphQL FieldDefinition.
 //

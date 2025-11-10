@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"testing"
 
-	graphql "github.com/ddollar/graphql-go"
-	"github.com/ddollar/graphql-go/errors"
+	graphql "go.ddollar.dev/graphql-go"
+	"go.ddollar.dev/graphql-go/errors"
 )
 
 // TestResponse models the expected response

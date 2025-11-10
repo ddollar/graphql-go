@@ -1,6 +1,6 @@
 package types
 
-import "github.com/ddollar/graphql-go/errors"
+import "go.ddollar.dev/graphql-go/errors"
 
 // Variable is used in GraphQL operations to parameterize an input value.
 //

@@ -1,6 +1,6 @@
 package common
 
-import "github.com/ddollar/graphql-go/types"
+import "go.ddollar.dev/graphql-go/types"
 
 func ParseDirectives(l *Lexer) types.DirectiveList {
 	var directives types.DirectiveList

@@ -3,7 +3,7 @@ package common_test
 import (
 	"testing"
 
-	"github.com/ddollar/graphql-go/internal/common"
+	"go.ddollar.dev/graphql-go/internal/common"
 )
 
 type consumeTestCase struct {

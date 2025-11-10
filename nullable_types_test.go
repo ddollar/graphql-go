@@ -4,8 +4,8 @@ import (
 	"math"
 	"testing"
 
-	. "github.com/ddollar/graphql-go"
-	"github.com/ddollar/graphql-go/decode"
+	. "go.ddollar.dev/graphql-go"
+	"go.ddollar.dev/graphql-go/decode"
 )
 
 func TestNullInt_ImplementsUnmarshaler(t *testing.T) {

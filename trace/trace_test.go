@@ -3,11 +3,11 @@ package trace_test
 import (
 	"testing"
 
-	"github.com/ddollar/graphql-go"
-	"github.com/ddollar/graphql-go/errors"
-	"github.com/ddollar/graphql-go/example/starwars"
-	"github.com/ddollar/graphql-go/trace"
-	"github.com/ddollar/graphql-go/trace/tracer"
+	"go.ddollar.dev/graphql-go"
+	"go.ddollar.dev/graphql-go/errors"
+	"go.ddollar.dev/graphql-go/example/starwars"
+	"go.ddollar.dev/graphql-go/trace"
+	"go.ddollar.dev/graphql-go/trace/tracer"
 )
 
 func TestInterfaceImplementation(t *testing.T) {

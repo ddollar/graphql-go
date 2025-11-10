@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/ddollar/graphql-go"
-	"github.com/ddollar/graphql-go/relay"
+	"go.ddollar.dev/graphql-go"
+	"go.ddollar.dev/graphql-go/relay"
 )
 
 var schema = `

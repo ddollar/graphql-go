@@ -4,14 +4,14 @@ import (
 	"context"
 	"errors"
 
-	qerrors "github.com/ddollar/graphql-go/errors"
-	"github.com/ddollar/graphql-go/internal/common"
-	"github.com/ddollar/graphql-go/internal/exec"
-	"github.com/ddollar/graphql-go/internal/exec/resolvable"
-	"github.com/ddollar/graphql-go/internal/exec/selected"
-	"github.com/ddollar/graphql-go/internal/query"
-	"github.com/ddollar/graphql-go/internal/validation"
-	"github.com/ddollar/graphql-go/introspection"
+	qerrors "go.ddollar.dev/graphql-go/errors"
+	"go.ddollar.dev/graphql-go/internal/common"
+	"go.ddollar.dev/graphql-go/internal/exec"
+	"go.ddollar.dev/graphql-go/internal/exec/resolvable"
+	"go.ddollar.dev/graphql-go/internal/exec/selected"
+	"go.ddollar.dev/graphql-go/internal/query"
+	"go.ddollar.dev/graphql-go/internal/validation"
+	"go.ddollar.dev/graphql-go/introspection"
 )
 
 // Subscribe returns a response channel for the given subscription with the schema's

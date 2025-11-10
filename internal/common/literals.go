@@ -3,7 +3,7 @@ package common
 import (
 	"text/scanner"
 
-	"github.com/ddollar/graphql-go/types"
+	"go.ddollar.dev/graphql-go/types"
 )
 
 func ParseLiteral(l *Lexer, constOnly bool) types.Value {

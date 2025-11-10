@@ -3,7 +3,7 @@ package customerrors
 import (
 	"fmt"
 
-	"github.com/ddollar/graphql-go"
+	"go.ddollar.dev/graphql-go"
 )
 
 var Schema = `

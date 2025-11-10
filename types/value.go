@@ -5,7 +5,7 @@ import (
 	"strings"
 	"text/scanner"
 
-	"github.com/ddollar/graphql-go/errors"
+	"go.ddollar.dev/graphql-go/errors"
 )
 
 // Value represents a literal input or literal default value in the GraphQL Specification.

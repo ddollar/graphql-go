@@ -6,9 +6,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/ddollar/graphql-go/decode"
-	"github.com/ddollar/graphql-go/internal/exec/packer"
-	"github.com/ddollar/graphql-go/types"
+	"go.ddollar.dev/graphql-go/decode"
+	"go.ddollar.dev/graphql-go/internal/exec/packer"
+	"go.ddollar.dev/graphql-go/types"
 )
 
 type Schema struct {

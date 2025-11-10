@@ -5,10 +5,10 @@ import (
 
 	"go.opentelemetry.io/otel"
 
-	"github.com/ddollar/graphql-go"
-	"github.com/ddollar/graphql-go/example/starwars"
-	otelgraphql "github.com/ddollar/graphql-go/trace/otel"
-	"github.com/ddollar/graphql-go/trace/tracer"
+	"go.ddollar.dev/graphql-go"
+	"go.ddollar.dev/graphql-go/example/starwars"
+	otelgraphql "go.ddollar.dev/graphql-go/trace/otel"
+	"go.ddollar.dev/graphql-go/trace/tracer"
 )
 
 func TestInterfaceImplementation(t *testing.T) {

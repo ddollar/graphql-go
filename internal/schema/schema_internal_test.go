@@ -4,9 +4,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ddollar/graphql-go/errors"
-	"github.com/ddollar/graphql-go/internal/common"
-	"github.com/ddollar/graphql-go/types"
+	"go.ddollar.dev/graphql-go/errors"
+	"go.ddollar.dev/graphql-go/internal/common"
+	"go.ddollar.dev/graphql-go/types"
 )
 
 func TestParseInterfaceDef(t *testing.T) {

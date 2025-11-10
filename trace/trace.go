@@ -3,10 +3,10 @@
 package trace
 
 import (
-	"github.com/ddollar/graphql-go/errors"
-	"github.com/ddollar/graphql-go/trace/noop"
-	"github.com/ddollar/graphql-go/trace/opentracing"
-	"github.com/ddollar/graphql-go/trace/tracer"
+	"go.ddollar.dev/graphql-go/errors"
+	"go.ddollar.dev/graphql-go/trace/noop"
+	"go.ddollar.dev/graphql-go/trace/opentracing"
+	"go.ddollar.dev/graphql-go/trace/tracer"
 )
 
 // Deprecated: this type has been deprecated. Use tracer.QueryFinishFunc instead.

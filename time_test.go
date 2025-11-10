@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/ddollar/graphql-go"
-	"github.com/ddollar/graphql-go/decode"
+	. "go.ddollar.dev/graphql-go"
+	"go.ddollar.dev/graphql-go/decode"
 )
 
 func TestTime_ImplementsUnmarshaler(t *testing.T) {

@@ -1,7 +1,7 @@
 package common
 
 import (
-	"github.com/ddollar/graphql-go/types"
+	"go.ddollar.dev/graphql-go/types"
 )
 
 func ParseInputValue(l *Lexer) *types.InputValueDefinition {

@@ -1,4 +1,4 @@
-module github.com/ddollar/graphql-go
+module go.ddollar.dev/graphql-go
 
 go 1.13
 

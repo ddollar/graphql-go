@@ -5,9 +5,9 @@ import (
 	"log"
 	"net/http"
 
-	graphql "github.com/ddollar/graphql-go"
-	"github.com/ddollar/graphql-go/example/scalar_map/types"
-	"github.com/ddollar/graphql-go/relay"
+	graphql "go.ddollar.dev/graphql-go"
+	"go.ddollar.dev/graphql-go/example/scalar_map/types"
+	"go.ddollar.dev/graphql-go/relay"
 )
 
 type Args struct {

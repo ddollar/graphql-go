@@ -9,13 +9,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ddollar/graphql-go/errors"
-	"github.com/ddollar/graphql-go/internal/exec/resolvable"
-	"github.com/ddollar/graphql-go/internal/exec/selected"
-	"github.com/ddollar/graphql-go/internal/query"
-	"github.com/ddollar/graphql-go/log"
-	"github.com/ddollar/graphql-go/trace/tracer"
-	"github.com/ddollar/graphql-go/types"
+	"go.ddollar.dev/graphql-go/errors"
+	"go.ddollar.dev/graphql-go/internal/exec/resolvable"
+	"go.ddollar.dev/graphql-go/internal/exec/selected"
+	"go.ddollar.dev/graphql-go/internal/query"
+	"go.ddollar.dev/graphql-go/log"
+	"go.ddollar.dev/graphql-go/trace/tracer"
+	"go.ddollar.dev/graphql-go/types"
 )
 
 type Request struct {

@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	graphql "github.com/ddollar/graphql-go"
+	graphql "go.ddollar.dev/graphql-go"
 )
 
 var Schema = `

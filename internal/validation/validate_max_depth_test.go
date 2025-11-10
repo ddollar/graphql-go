@@ -3,9 +3,9 @@ package validation
 import (
 	"testing"
 
-	"github.com/ddollar/graphql-go/internal/query"
-	"github.com/ddollar/graphql-go/internal/schema"
-	"github.com/ddollar/graphql-go/types"
+	"go.ddollar.dev/graphql-go/internal/query"
+	"go.ddollar.dev/graphql-go/internal/schema"
+	"go.ddollar.dev/graphql-go/types"
 )
 
 const (
